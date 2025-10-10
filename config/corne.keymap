@@ -4,7 +4,8 @@
 
 &led_strip {
   chain-length = <21>;
-}
+};
+
 / {
     behaviors {
       // Generic hold-tap: we supply tap+hold at call-site
