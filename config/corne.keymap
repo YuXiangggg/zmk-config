@@ -1,97 +1,86 @@
-/*
- * Copyright (c) 2020 The ZMK Contributors
- * SPDX-License-Identifier: MIT
- */
-
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
-
-/ {
+{
     behaviors {
-        // --- Home-row mod behaviors (per-key hold-tap instances) ---
-        // Tap the passed key, hold the fixed modifier.
-        hm_lctl: hm_lctl {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HRM_LCTL";
-            #binding-cells = <1>;                // we pass only the tap key
-            tapping-term-ms = <200>;
-            quick-tap-ms = <100>;
-            flavor = "hold-preferred";
-            bindings = <&kp>, <&kp LCTRL>;       // tap binding, hold binding
-        };
+      // Generic hold-tap: we supply tap+hold at call-site
+      hm_lctl: hm_lctl {
+        compatible = "zmk,behavior-hold-tap";
+        label = "HRM_LCTL";
+        #binding-cells = <2>;
+        tapping-term-ms = <200>;
+        quick-tap-ms = <100>;
+        flavor = "hold-preferred";
+        bindings = <&kp &kp>;
+      };
 
-        hm_lalt: hm_lalt {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HRM_LALT";
-            #binding-cells = <1>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <100>;
-            flavor = "hold-preferred";
-            bindings = <&kp>, <&kp LALT>;
-        };
+      hm_lalt: hm_lalt {
+        compatible = "zmk,behavior-hold-tap";
+        label = "HRM_LALT";
+        #binding-cells = <2>;
+        tapping-term-ms = <200>;
+        quick-tap-ms = <100>;
+        flavor = "hold-preferred";
+        bindings = <&kp &kp>;
+      };
 
-        hm_lgui: hm_lgui {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HRM_LGUI";
-            #binding-cells = <1>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <100>;
-            flavor = "hold-preferred";
-            bindings = <&kp>, <&kp LGUI>;
-        };
+      hm_lgui: hm_lgui {
+        compatible = "zmk,behavior-hold-tap";
+        label = "HRM_LGUI";
+        #binding-cells = <2>;
+        tapping-term-ms = <200>;
+        quick-tap-ms = <100>;
+        flavor = "hold-preferred";
+        bindings = <&kp &kp>;
+      };
 
-        hm_lsft: hm_lsft {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HRM_LSFT";
-            #binding-cells = <1>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <100>;
-            flavor = "hold-preferred";
-            bindings = <&kp>, <&kp LSHFT>;
-        };
+      hm_lsft: hm_lsft {
+        compatible = "zmk,behavior-hold-tap";
+        label = "HRM_LSFT";
+        #binding-cells = <2>;
+        tapping-term-ms = <200>;
+        quick-tap-ms = <100>;
+        flavor = "hold-preferred";
+        bindings = <&kp &kp>;
+      };
 
-        hm_rctl: hm_rctl {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HRM_RCTL";
-            #binding-cells = <1>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <100>;
-            flavor = "hold-preferred";
-            bindings = <&kp>, <&kp RCTRL>;
-        };
+      hm_rctl: hm_rctl {
+        compatible = "zmk,behavior-hold-tap";
+        label = "HRM_RCTL";
+        #binding-cells = <2>;
+        tapping-term-ms = <200>;
+        quick-tap-ms = <100>;
+        flavor = "hold-preferred";
+        bindings = <&kp &kp>;
+      };
 
-        hm_ralt: hm_ralt {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HRM_RALT";
-            #binding-cells = <1>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <100>;
-            flavor = "hold-preferred";
-            bindings = <&kp>, <&kp RALT>;
-        };
+      hm_ralt: hm_ralt {
+        compatible = "zmk,behavior-hold-tap";
+        label = "HRM_RALT";
+        #binding-cells = <2>;
+        tapping-term-ms = <200>;
+        quick-tap-ms = <100>;
+        flavor = "hold-preferred";
+        bindings = <&kp &kp>;
+      };
 
-        hm_rgui: hm_rgui {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HRM_RGUI";
-            #binding-cells = <1>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <100>;
-            flavor = "hold-preferred";
-            bindings = <&kp>, <&kp RGUI>;
-        };
+      hm_rgui: hm_rgui {
+        compatible = "zmk,behavior-hold-tap";
+        label = "HRM_RGUI";
+        #binding-cells = <2>;
+        tapping-term-ms = <200>;
+        quick-tap-ms = <100>;
+        flavor = "hold-preferred";
+        bindings = <&kp &kp>;
+      };
 
-        hm_rsft: hm_rsft {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HRM_RSFT";
-            #binding-cells = <1>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <100>;
-            flavor = "hold-preferred";
-            bindings = <&kp>, <&kp RSHFT>;
-        };
+      hm_rsft: hm_rsft {
+        compatible = "zmk,behavior-hold-tap";
+        label = "HRM_RSFT";
+        #binding-cells = <2>;
+        tapping-term-ms = <200>;
+        quick-tap-ms = <100>;
+        flavor = "hold-preferred";
+        bindings = <&kp &kp>;
+      };
     };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -104,7 +93,7 @@
             //                | GUI | LWR | SPC |   | ENT | RSE  | ALT |
             bindings = <
    &kp TAB   &kp Q  &kp W  &kp E  &kp R  &kp T        &kp Y  &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp ESC   &hm_lgui A &hm_lalt S &hm_lctl D &hm_lsft F &kp G   &kp H &hm_rsft J &hm_rctl K &hm_ralt L &hm_rgui SEMI &kp SQT
+   &kp ESC   &hm_lgui A LGUI  &hm_lalt S LALT  &hm_lctl D LCTRL  &hm_lsft F LSHFT  &kp G &kp H            &hm_rsft J RSHFT &hm_rctl K RCTRL  &hm_ralt L RALT   &hm_rgui SEMI RGUI  &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B             &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
                     &kp DEL   &kp ESC  &kp SPACE        &kp RET  &mo 2 &mo 1
             >;
