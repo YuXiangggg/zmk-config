@@ -1,6 +1,5 @@
 /*
  * Copyright (c) 2020 The ZMK Contributors
- *
  * SPDX-License-Identifier: MIT
  */
 
@@ -9,51 +8,129 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
-        keymap {
-                compatible = "zmk,keymap";
+    behaviors {
+        // --- Home-row mod behaviors (per-key hold-tap instances) ---
+        // Tap the passed key, hold the fixed modifier.
+        hm_lctl: hm_lctl {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM_LCTL";
+            #binding-cells = <1>;                // we pass only the tap key
+            tapping-term-ms = <200>;
+            quick-tap-ms = <100>;
+            flavor = "hold-preferred";
+            bindings = <&kp>, <&kp LCTRL>;       // tap binding, hold binding
+        };
 
-                default_layer {
-                        display-name = "Default Layer";
-// -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-                        bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                  &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
-                        >;
-                };
-                lower_layer {
-                        display-name = "Lower Layer";
-// -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        bindings = <
+        hm_lalt: hm_lalt {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM_LALT";
+            #binding-cells = <1>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <100>;
+            flavor = "hold-preferred";
+            bindings = <&kp>, <&kp LALT>;
+        };
+
+        hm_lgui: hm_lgui {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM_LGUI";
+            #binding-cells = <1>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <100>;
+            flavor = "hold-preferred";
+            bindings = <&kp>, <&kp LGUI>;
+        };
+
+        hm_lsft: hm_lsft {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM_LSFT";
+            #binding-cells = <1>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <100>;
+            flavor = "hold-preferred";
+            bindings = <&kp>, <&kp LSHFT>;
+        };
+
+        hm_rctl: hm_rctl {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM_RCTL";
+            #binding-cells = <1>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <100>;
+            flavor = "hold-preferred";
+            bindings = <&kp>, <&kp RCTRL>;
+        };
+
+        hm_ralt: hm_ralt {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM_RALT";
+            #binding-cells = <1>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <100>;
+            flavor = "hold-preferred";
+            bindings = <&kp>, <&kp RALT>;
+        };
+
+        hm_rgui: hm_rgui {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM_RGUI";
+            #binding-cells = <1>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <100>;
+            flavor = "hold-preferred";
+            bindings = <&kp>, <&kp RGUI>;
+        };
+
+        hm_rsft: hm_rsft {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM_RSFT";
+            #binding-cells = <1>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <100>;
+            flavor = "hold-preferred";
+            bindings = <&kp>, <&kp RSHFT>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            display-name = "Default Layer";
+            // -----------------------------------------------------------------------------------------
+            // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
+            // | ESC |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
+            //                | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+            bindings = <
+   &kp TAB   &kp Q  &kp W  &kp E  &kp R  &kp T        &kp Y  &kp U  &kp I     &kp O   &kp P    &kp BSPC
+   &kp ESC   &hm_lgui A &hm_lalt S &hm_lctl D &hm_lsft F &kp G   &kp H &hm_rsft J &hm_rctl K &hm_ralt L &hm_rgui SEMI &kp SQT
+   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B             &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
+                    &kp DEL   &kp ESC  &kp SPACE        &kp RET  &mo 2 &mo 1
+            >;
+        };
+
+        lower_layer {
+            display-name = "Lower Layer";
+            // (unchanged)
+            bindings = <
    &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
+   &bt CAPS &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
    &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                                    &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
-                        >;
-                };
+                                 &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
+            >;
+        };
 
-                raise_layer {
-                        display-name = "Raise Layer";
-// -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        bindings = <
+        raise_layer {
+            display-name = "Raise Layer";
+            // (unchanged)
+            bindings = <
    &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
    &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
    &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &kp TILDE
-                             &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
-                        >;
-                };
+                          &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+            >;
         };
+    };
 };
+
