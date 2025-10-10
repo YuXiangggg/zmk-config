@@ -11,7 +11,7 @@
         #binding-cells = <2>;
         tapping-term-ms = <200>;
         quick-tap-ms = <100>;
-        flavor = "hold-preferred";
+        flavor = "tap-preferred";
         bindings = <&kp &kp>;
       };
 
@@ -21,7 +21,7 @@
         #binding-cells = <2>;
         tapping-term-ms = <200>;
         quick-tap-ms = <100>;
-        flavor = "hold-preferred";
+        flavor = "tap-preferred";
         bindings = <&kp &kp>;
       };
 
@@ -31,7 +31,7 @@
         #binding-cells = <2>;
         tapping-term-ms = <200>;
         quick-tap-ms = <100>;
-        flavor = "hold-preferred";
+        flavor = "tap-preferred";
         bindings = <&kp &kp>;
       };
 
@@ -41,7 +41,7 @@
         #binding-cells = <2>;
         tapping-term-ms = <200>;
         quick-tap-ms = <100>;
-        flavor = "hold-preferred";
+        flavor = "tap-preferred";
         bindings = <&kp &kp>;
       };
 
@@ -51,7 +51,7 @@
         #binding-cells = <2>;
         tapping-term-ms = <200>;
         quick-tap-ms = <100>;
-        flavor = "hold-preferred";
+        flavor = "tap-preferred";
         bindings = <&kp &kp>;
       };
 
@@ -61,7 +61,7 @@
         #binding-cells = <2>;
         tapping-term-ms = <200>;
         quick-tap-ms = <100>;
-        flavor = "hold-preferred";
+        flavor = "tap-preferred";
         bindings = <&kp &kp>;
       };
 
@@ -71,7 +71,7 @@
         #binding-cells = <2>;
         tapping-term-ms = <200>;
         quick-tap-ms = <100>;
-        flavor = "hold-preferred";
+        flavor = "tap-preferred";
         bindings = <&kp &kp>;
       };
 
@@ -81,7 +81,7 @@
         #binding-cells = <2>;
         tapping-term-ms = <200>;
         quick-tap-ms = <100>;
-        flavor = "hold-preferred";
+        flavor = "tap-preferred";
         bindings = <&kp &kp>;
       };
     };
@@ -97,7 +97,7 @@
             //                | GUI | LWR | SPC |   | ENT | RSE  | ALT |
             bindings = <
    &kp TAB   &kp Q  &kp W  &kp E  &kp R  &kp T        &kp Y  &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp ESC   &hm_lgui A LGUI  &hm_lalt S LALT  &hm_lctl D LCTRL  &hm_lsft F LSHFT  &kp G &kp H            &hm_rsft J RSHFT &hm_rctl K RCTRL  &hm_ralt L RALT   &hm_rgui SEMI RGUI  &kp SQT
+   &kp ESC   &hm_lgui LGUI A  &hm_lalt LALT S  &hm_lctl LCTRL D  &hm_lsft LSHFT F  &kp G &kp H            &hm_rsft RSHFT J &hm_rctl RCTRL K  &hm_ralt RALT L   &hm_rgui RGUI SEMI  &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B             &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
                     &kp DEL   &kp ESC  &kp SPACE        &kp RET  &mo 2 &mo 1
             >;
