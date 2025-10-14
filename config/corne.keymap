@@ -113,7 +113,7 @@
         };
 
         number_layer {
-            display-name = "Lower Layer";
+            display-name = "Number Layer";
 
             // (unchanged)
 
@@ -126,7 +126,7 @@
         };
 
         symbol_layer {
-            display-name = "Raise Layer";
+            display-name = "Symbol Layer";
 
             // (unchanged)
 
@@ -139,6 +139,7 @@
         };
 
         mouse_layer {
+            display-name = "Mouse Layer";
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans       &trans          &trans          &trans        &trans           &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans       &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans  &trans
@@ -148,6 +149,7 @@
         };
 
         fn_layer {
+            display-name = "Fn Layer";
             bindings = <
 &trans             &kp LS(F11)  &trans  &trans  &trans  &trans    &trans  &trans  &trans           &trans           &rgb_ug RGB_EFR  &rgb_ug RGB_EFF
 &kp C_VOLUME_UP    &trans       &trans  &trans  &trans  &trans    &trans  &trans  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &bt BT_PRV       &bt BT_NXT
