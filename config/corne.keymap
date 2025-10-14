@@ -149,12 +149,11 @@
         };
 
         fn_layer {
-            display-name = "Fn Layer";
             bindings = <
-&trans             &kp LS(F11)  &trans  &trans  &trans  &trans    &trans  &trans  &trans           &trans           &rgb_ug RGB_EFR  &rgb_ug RGB_EFF
-&kp C_VOLUME_UP    &trans       &trans  &trans  &trans  &trans    &trans  &trans  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &bt BT_PRV       &bt BT_NXT
-&kp C_VOLUME_DOWN  &trans       &trans  &trans  &trans  &trans    &trans  &trans  &bl BL_TOG       &rgb_ug RGB_TOG  &bt BT_CLR       &bt BT_CLR_ALL
-                                        &trans  &trans  &trans    &trans  &trans  &trans
+&kp LS(F11)        &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &kp LG(N4)  &kp LG(N5)    &trans  &trans  &trans           &trans           &rgb_ug RGB_EFR  &rgb_ug RGB_EFF
+&kp C_VOLUME_UP    &trans      &trans      &trans      &trans      &trans        &trans  &trans  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &bt BT_PRV       &bt BT_NXT
+&kp C_VOLUME_DOWN  &trans      &trans      &trans      &trans      &trans        &trans  &trans  &bl BL_TOG       &rgb_ug RGB_TOG  &bt BT_CLR       &bt BT_CLR_ALL
+                                           &trans      &trans      &trans        &trans  &trans  &trans
             >;
         };
     };
