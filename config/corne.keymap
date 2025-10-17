@@ -91,6 +91,15 @@
         };
     };
 
+    macros {
+        complex: complex {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(P) &kp AT &kp S &kp S &kp W &kp N0 &kp R &kp D>;
+            label = "COMPLEX";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -149,10 +158,10 @@
 
         fn_layer {
             bindings = <
-&kp LS(F11)        &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &kp LG(N4)  &kp LG(N5)    &trans  &trans  &trans           &trans           &rgb_ug RGB_EFR  &rgb_ug RGB_EFF
-&kp C_VOLUME_UP    &trans      &trans      &trans      &trans      &trans        &trans  &trans  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &bt BT_PRV       &bt BT_NXT
-&kp C_VOLUME_DOWN  &trans      &trans      &trans      &trans      &trans        &trans  &trans  &trans           &trans           &bt BT_CLR       &bt BT_CLR_ALL
-                                           &trans      &trans      &trans        &trans  &trans  &trans
+&kp LS(F11)        &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &kp LG(N4)  &kp LG(N5)    &complex  &trans  &trans           &trans           &rgb_ug RGB_EFR  &rgb_ug RGB_EFF
+&kp C_VOLUME_UP    &trans      &trans      &trans      &trans      &trans        &trans    &trans  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &bt BT_PRV       &bt BT_NXT
+&kp C_VOLUME_DOWN  &trans      &trans      &trans      &trans      &trans        &trans    &trans  &trans           &trans           &bt BT_CLR       &bt BT_CLR_ALL
+                                           &trans      &trans      &trans        &trans    &trans  &trans
             >;
         };
     };
