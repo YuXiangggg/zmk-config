@@ -111,7 +111,7 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            display-name = "Default Layer";
+            display-name = "QWERTY";
 
             // -----------------------------------------------------------------------------------------
             // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
@@ -123,7 +123,24 @@
 &kp TAB  &kp Q            &kp W            &kp E             &kp R             &kp T        &kp Y    &kp U             &kp I             &kp O            &kp P               &kp BSPC
 &kp ESC  &hm_lgui LGUI A  &hm_lalt LALT S  &hm_lctl LCTRL D  &hm_lsft LSHFT F  &kp G        &kp H    &hm_rsft RSHFT J  &hm_rctl RCTRL K  &hm_ralt RALT L  &hm_rgui RGUI SEMI  &kp SQT
 &kp TAB  &kp Z            &kp X            &kp C             &kp V             &kp B        &kp N    &kp M             &kp COMMA         &kp DOT          &kp FSLH            &kp GRAVE
-                                           &mo 4             &mo 2             &kp SPACE    &kp RET  &mo 1             &mo 3
+                                           &mo 5             &mo 3             &kp SPACE    &kp RET  &mo 2             &mo 4
+            >;
+        };
+
+        dvorak_layer {
+            display-name = "Dvorak";
+
+            // -----------------------------------------------------------------------------------------
+            // |  TAB |  '  |  ,  |  .  |  P  |  Y  |   |  F  |  G   |  C  |  R  |  L  | BSPC |
+            // | ESC  |  A  |  O  |  E  |  U  |  I  |   |  D  |  H   |  T  |  N  |  S  |  /   |
+            // | TAB  |  ;  |  Q  |  J  |  K  |  X  |   |  B  |  M   |  W  |  V  |  Z  | GRAVE|
+            //                | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+
+            bindings = <
+&kp TAB  &kp SQT          &kp COMMA        &kp DOT           &kp P             &kp Y        &kp F    &kp G             &kp C             &kp R            &kp L               &kp BSPC
+&kp ESC  &hm_lgui LGUI A  &hm_lalt LALT O  &hm_lctl LCTRL E  &hm_lsft LSHFT U  &kp I        &kp D    &hm_rsft RSHFT H  &hm_rctl RCTRL T  &hm_ralt RALT N  &hm_rgui RGUI S     &kp FSLH
+&kp TAB  &kp SEMI         &kp Q            &kp J             &kp K             &kp X        &kp B    &kp M             &kp W             &kp V            &kp Z               &kp GRAVE
+                                           &mo 5             &mo 3             &kp SPACE    &kp RET  &mo 2             &mo 4
             >;
         };
 
@@ -167,28 +184,11 @@
             bindings = <
 &kp LS(F11)        &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &kp LG(N4)  &kp LG(N5)    &complex  &kim_pw  &trans           &trans           &rgb_ug RGB_EFR  &rgb_ug RGB_EFF
 &kp C_VOLUME_UP    &trans      &trans      &trans      &trans      &trans        &trans    &trans   &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &bt BT_PRV       &bt BT_NXT
-&kp C_VOLUME_DOWN  &to 0      &to 5      &trans      &trans      &trans        &trans    &trans   &trans           &trans           &bt BT_CLR       &bt BT_CLR_ALL
+&kp C_VOLUME_DOWN  &to 0       &to 1       &trans      &trans      &trans        &trans    &trans   &trans           &trans           &bt BT_CLR       &bt BT_CLR_ALL
                                            &trans      &trans      &trans        &trans    &trans   &trans
             >;
 
             label = "Fn Layer";
-        };
-
-        dvorak_layer {
-            display-name = "Dvorak Layer";
-
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  '  |  ,  |  .  |  P  |  Y  |   |  F  |  G   |  C  |  R  |  L  | BSPC |
-            // | ESC  |  A  |  O  |  E  |  U  |  I  |   |  D  |  H   |  T  |  N  |  S  |  /   |
-            // | TAB  |  ;  |  Q  |  J  |  K  |  X  |   |  B  |  M   |  W  |  V  |  Z  | GRAVE|
-            //                | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-
-            bindings = <
-&kp TAB  &kp SQT          &kp COMMA        &kp DOT           &kp P             &kp Y        &kp F    &kp G             &kp C             &kp R            &kp L               &kp BSPC
-&kp ESC  &hm_lgui LGUI A  &hm_lalt LALT O  &hm_lctl LCTRL E  &hm_lsft LSHFT U  &kp I        &kp D    &hm_rsft RSHFT H  &hm_rctl RCTRL T  &hm_ralt RALT N  &hm_rgui RGUI S     &kp FSLH
-&kp TAB  &kp SEMI         &kp Q            &kp J             &kp K             &kp X        &kp B    &kp M             &kp W             &kp V            &kp Z               &kp GRAVE
-                                           &mo 4             &mo 2             &kp SPACE    &kp RET  &mo 1             &mo 3
-            >;
         };
     };
 };
